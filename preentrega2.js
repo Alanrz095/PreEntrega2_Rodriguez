@@ -24,61 +24,65 @@ datos.push(new Inversion(
 
 let entrada;
 
-switch(datos[0].plazo){
-    case 30:
-        for(const dato of datos){
-           entrada = dato.interes();
-        }
-        alert("Banco: " + datos[0].banco + "\n" + 
-               "CBU: " + datos[0].cbu + "\n" + 
-               "Plazo elegido: " + datos[0].plazo + " días \n" +
-               "Capital invertido: $" + datos[0].capital + "\n" +
-               "Interés: $" + resultado + "\n" +
-               "Dinero a depositar: $" + (datos[0].capital + resultado)
-             );
-        break;
+if(datos[0].capital > 0){
+    switch(datos[0].plazo){
+        case 30:
+            for(const dato of datos){
+               entrada = dato.interes();
+            }
+            alert("Banco: " + datos[0].banco + "\n" + 
+                   "CBU: " + datos[0].cbu + "\n" + 
+                   "Plazo elegido: " + datos[0].plazo + " días \n" +
+                   "Capital invertido: $" + datos[0].capital + "\n" +
+                   "Interés: $" + resultado + "\n" +
+                   "Dinero a depositar: $" + (datos[0].capital + resultado)
+                 );
+            break;
+        
+        case 60:
+            for(const dato of datos){
+                entrada = 2*(dato.interes());
+             }
+             alert("Banco: " + datos[0].banco + "\n" + 
+                    "CBU: " + datos[0].cbu + "\n" + 
+                    "Plazo elegido: " + datos[0].plazo + " días \n" +
+                    "Capital invertido: $" + datos[0].capital + "\n" +
+                    "Interés: $" + resultado + "\n" +
+                    "Dinero a depositar: $" + (datos[0].capital + resultado)
+                  );
+             break;
     
-    case 60:
-        for(const dato of datos){
-            entrada = 2*(dato.interes());
-         }
-         alert("Banco: " + datos[0].banco + "\n" + 
-                "CBU: " + datos[0].cbu + "\n" + 
-                "Plazo elegido: " + datos[0].plazo + " días \n" +
-                "Capital invertido: $" + datos[0].capital + "\n" +
-                "Interés: $" + resultado + "\n" +
-                "Dinero a depositar: $" + (datos[0].capital + resultado)
-              );
-         break;
-
-    case 90:
-        for(const dato of datos){
-            entrada = 4*(dato.interes());
-         }
-         alert("Banco: " + datos[0].banco + "\n" + 
-                "CBU: " + datos[0].cbu + "\n" + 
-                "Plazo elegido: " + datos[0].plazo + " días \n" +
-                "Capital invertido: $" + datos[0].capital + "\n" +
-                "Interés: $" + resultado + "\n" +
-                "Dinero a depositar: $" + (datos[0].capital + resultado)
-              );
-         break;
-
-    case 120:
-        for(const dato of datos){
-            entrada = 8*(dato.interes());
-         }
-         alert("Banco: " + datos[0].banco + "\n" + 
-                "CBU: " + datos[0].cbu + "\n" + 
-                "Plazo elegido: " + datos[0].plazo + " días \n" +
-                "Capital invertido: $" + datos[0].capital + "\n" +
-                "Interés: $" + resultado + "\n" +
-                "Dinero a depositar: $" + (datos[0].capital + resultado)
-              );
-        break;
-
-    default:
-        alert("Por favor ingrese un plazo válido");
-        break;
+        case 90:
+            for(const dato of datos){
+                entrada = 4*(dato.interes());
+             }
+             alert("Banco: " + datos[0].banco + "\n" + 
+                    "CBU: " + datos[0].cbu + "\n" + 
+                    "Plazo elegido: " + datos[0].plazo + " días \n" +
+                    "Capital invertido: $" + datos[0].capital + "\n" +
+                    "Interés: $" + resultado + "\n" +
+                    "Dinero a depositar: $" + (datos[0].capital + resultado)
+                  );
+             break;
+    
+        case 120:
+            for(const dato of datos){
+                entrada = 8*(dato.interes());
+             }
+             alert("Banco: " + datos[0].banco + "\n" + 
+                    "CBU: " + datos[0].cbu + "\n" + 
+                    "Plazo elegido: " + datos[0].plazo + " días \n" +
+                    "Capital invertido: $" + datos[0].capital + "\n" +
+                    "Interés: $" + resultado + "\n" +
+                    "Dinero a depositar: $" + (datos[0].capital + resultado)
+                  );
+            break;
+    
+        default:
+            alert("Por favor ingrese un plazo válido");
+            break;
+    }
+}else{
+    alert("Por favor ingrese un valor válido");
 }
          
