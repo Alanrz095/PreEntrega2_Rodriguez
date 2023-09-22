@@ -22,14 +22,14 @@ datos.push(new Inversion(
     +(prompt("Ingrese el capital a invertir"))
 ));
 
-let entrada;
+let entrada = 0;
 
 if(datos[0].capital > 0){
     switch(datos[0].plazo){
         case 30:
-            for(const dato of datos){
-               entrada = dato.interes();
-            }
+            datos.forEach((dato) => {
+                entrada += dato.interes();
+            })
             alert("Banco: " + datos[0].banco + "\n" + 
                    "CBU: " + datos[0].cbu + "\n" + 
                    "Plazo elegido: " + datos[0].plazo + " días \n" +
@@ -40,9 +40,9 @@ if(datos[0].capital > 0){
             break;
         
         case 60:
-            for(const dato of datos){
-                entrada = 2*(dato.interes());
-             }
+            datos.forEach((dato) => {
+                entrada += 2 * (dato.interes());
+            })
              alert("Banco: " + datos[0].banco + "\n" + 
                     "CBU: " + datos[0].cbu + "\n" + 
                     "Plazo elegido: " + datos[0].plazo + " días \n" +
@@ -53,9 +53,9 @@ if(datos[0].capital > 0){
              break;
     
         case 90:
-            for(const dato of datos){
-                entrada = 4*(dato.interes());
-             }
+            datos.forEach((dato) => {
+                entrada += 4 * (dato.interes());
+            })
              alert("Banco: " + datos[0].banco + "\n" + 
                     "CBU: " + datos[0].cbu + "\n" + 
                     "Plazo elegido: " + datos[0].plazo + " días \n" +
@@ -66,9 +66,9 @@ if(datos[0].capital > 0){
              break;
     
         case 120:
-            for(const dato of datos){
-                entrada = 8*(dato.interes());
-             }
+            datos.forEach((dato) => {
+                entrada += 8 * (dato.interes());
+            })
              alert("Banco: " + datos[0].banco + "\n" + 
                     "CBU: " + datos[0].cbu + "\n" + 
                     "Plazo elegido: " + datos[0].plazo + " días \n" +
